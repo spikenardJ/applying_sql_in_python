@@ -3,6 +3,7 @@
 # Task 1: SQL BETWEEN Usage
 
 from connect_mysql import connect_database
+conn = connect_database()
 
 def get_members_in_age_range(cursor, start_age, end_age):
     # SQL query using BETWEEN
@@ -14,7 +15,6 @@ def get_members_in_age_range(cursor, start_age, end_age):
         print(members)
 
 def main():
-    conn = connect_database()
     if conn is not None:
         try:
             cursor = conn.cursor()
